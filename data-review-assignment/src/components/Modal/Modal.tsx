@@ -19,14 +19,8 @@ export default function Modal({title, children, show, onClose} : ModalProps) {
                             onClick={onClose}
                         />
                     </div>
-                
                 </div>
-                
             </div>
-            
-            
         </div>
-        
-        
     )
 };

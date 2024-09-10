@@ -1,22 +1,22 @@
 import { ButtonProps } from "./Button.types";
 
-export default function Button({type, label, onClick}: ButtonProps) {
-    
-    let buttonColor = 'blue';
+export default function Button({color = 'blue', label, onClick}: ButtonProps) {
 
-    switch(type) {
-        case 'success':
-            buttonColor = 'green';
+    let buttonColor = 'bg-blue-500 hover:bg-blue-400'
+
+    switch(color) {
+        case 'red':
+            buttonColor = 'bg-red-500 hover:bg-red-400'
             break;
-        case 'error':
-            buttonColor = 'red';
+        case 'green':
+            buttonColor = 'bg-green-500 hover:bg-green-400'
             break;
-    };
+    }
 
     return (
         <button 
             onClick={onClick} 
-            className={`flex h-fit w-fit bg-${buttonColor}-400 hover:bg-${buttonColor}-300 p-2 rounded-md text-white font-bold`}>
+            className={`flex h-fit w-fit ${buttonColor} rounded-md p-2 text-white font-bold`}>
             {label}
         </button>
     );

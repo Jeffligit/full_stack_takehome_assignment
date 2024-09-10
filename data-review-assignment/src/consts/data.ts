@@ -1,4 +1,4 @@
-export const MOCK_DATA = {
+export const MOCK_DATA_2 = {
   records: [
     {
       id: 1,
@@ -4018,3 +4018,65 @@ export const MOCK_DATA = {
     },
   ],
 };
+
+export const MOCK_DATA = {
+  "records": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "street": "123 Main St",
+      "city": "New York",
+      "zipcode": "12345",
+      "phone": "123-456-7890",
+      "status": "active",
+      "errors": {
+        "phone": {
+          "message": "Invalid phone format",
+          "severity": "critical"
+        },
+        "zipcode": {
+          "message": "Invalid zipcode",
+          "severity": "warning"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@sample",
+      "street": "456 Elm St",
+      "city": "Los Angeles",
+      "zipcode": "",
+      "phone": "987-654-3210",
+      "status": "inactive",
+      "errors": {
+        "email": {
+          "message": "Invalid email format",
+          "severity": "critical"
+        },
+        "zipcode": {
+          "message": "Zipcode is missing",
+          "severity": "critical"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "street": "",
+      "city": "Chicago",
+      "zipcode": "60614",
+      "phone": "111-222-3333",
+      "status": "pending",
+      "errors": {
+        "street": {
+          "message": "Street address is missing",
+          "severity": "warning"
+        }
+      }
+    }
+  ]
+};
+
