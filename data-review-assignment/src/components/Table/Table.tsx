@@ -1,7 +1,5 @@
-type TableProp = {
-    headers: string[];
-    rows: any[];
-}
+import { TableProp } from "./Table.types"
+
 
 export default function Table({ headers, rows }: TableProp) {
 

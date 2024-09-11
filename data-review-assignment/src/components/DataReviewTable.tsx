@@ -17,7 +17,7 @@ export default function DataReviewTable() {
     const [showModal, setShowModal] = useState(false)
     const [errorSummary, setErrorSummary] = useState<errors<error>>({})
 
-    const columnHeaders = [
+    const COLUMN_HEADERS = [
         "ID",
         "Name",
         "Email",
@@ -54,7 +54,7 @@ export default function DataReviewTable() {
 
     function createCSVContent() {
         let lowerCaseHeaders: string[] = []
-        columnHeaders.map((header) => lowerCaseHeaders.push(header.toLowerCase()))
+        COLUMN_HEADERS.map((header) => lowerCaseHeaders.push(header.toLowerCase()))
         let csvContent = lowerCaseHeaders.join(',') + '\r\n'
         data.forEach(element => {
             let temp: any[] = []
@@ -104,7 +104,7 @@ export default function DataReviewTable() {
                     <thead>
                         <tr>
                             {
-                                columnHeaders.map(
+                                COLUMN_HEADERS.map(
                                     (column, index) => (
                                         <th key={`header ${index}`} className='border border-black'>{column}</th>
                                     )
@@ -121,7 +121,7 @@ export default function DataReviewTable() {
                                     return (
                                     <tr key={`'data review table row ${index}`}>
                                         {
-                                            columnHeaders.map(
+                                            COLUMN_HEADERS.map(
                                                 (column, colIndex) => {
                                                     const lowerCaseColumn = column.toLowerCase()
                                                     let cellColor = 'bg-green-300'
@@ -150,7 +150,9 @@ export default function DataReviewTable() {
                                                                     tooltipContent={errorMessage}
                                                                 /> 
                                                             :
-                                                            <td key={`row ${index} item ${colIndex}`} className={`relative cursor-pointer group border border-black text-center ${cellColor}`}>{record[lowerCaseColumn]}</td>
+                                                            <td key={`row ${index} item ${colIndex}`} className={`relative cursor-pointer group border border-black text-center ${cellColor}`}>{
+                                                                record[lowerCaseColumn]}
+                                                            </td>
                                                         }
                                                             
                                                         </>

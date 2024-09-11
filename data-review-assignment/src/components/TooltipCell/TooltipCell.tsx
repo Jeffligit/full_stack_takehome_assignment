@@ -1,9 +1,4 @@
-
-type TooltipCellProp = {
-    colorClass: string;
-    cellContent: string;
-    tooltipContent: string;
-}
+import { TooltipCellProp } from "./TooltipCell.types";
 
 export default function TooltipCell({colorClass, cellContent, tooltipContent}: TooltipCellProp) {
 
